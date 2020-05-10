@@ -1,13 +1,13 @@
 const shopCustomers = [ 
     { name: "Rachel", cashBalance: 15, desiredAlcoholItem: "vine", amountOfAlcohol: 1,  age: 18}, 
     { name: "Monica", cashBalance: 22, desiredAlcoholItem: "vodka", amountOfAlcohol: 1.5,  age: 28}, 
-    { name: "Phoebe", cashBalance: 30, desiredAlcoholItem: "brandy", amountOfAlcohol: 2,  age: 35}, 
+    { name: "Phoebe", cashBalance: 7, desiredAlcoholItem: "brandy", amountOfAlcohol: 2,  age: 35}, 
     { name: "Joey", cashBalance: 45, desiredAlcoholItem: "vodka", amountOfAlcohol: 1,  age: 15}, 
-    { name: "Chandler", cashBalance: 25, desiredAlcoholItem:"cognac", amountOfAlcohol: 2,  age: 47},
-    { name: "Ross",  cashBalance: 15, desiredAlcoholItem: "rum", amountOfAlcohol: 3,  age: 34}, 
-    { name: "Sarri",cashBalance: 14, desiredAlcoholItem: "vine", amountOfAlcohol: 2,  age: 28}, 
-    { name: "Villy", cashBalance: 19, desiredAlcoholItem: "brandy", amountOfAlcohol: 1,  age: 38}, 
-    { name: "Mari",cashBalance: 15, desiredAlcoholItem: "rum", amountOfAlcohol: 3,  age: 78},
+    { name: "Chandler", cashBalance: 5, desiredAlcoholItem:"cognac", amountOfAlcohol: 2,  age: 47},
+    { name: "Ross",  cashBalance: 3, desiredAlcoholItem: "rum", amountOfAlcohol: 3,  age: 34}, 
+    { name: "Sarri",cashBalance: 1, desiredAlcoholItem: "vine", amountOfAlcohol: 2,  age: 28}, 
+    { name: "Villy", cashBalance: 2, desiredAlcoholItem: "brandy", amountOfAlcohol: 1,  age: 38}, 
+    { name: "Mari",cashBalance: 3, desiredAlcoholItem: "rum", amountOfAlcohol: 3,  age: 78},
     { name: "Hanna", cashBalance: 10, desiredAlcoholItem: "cognac", amountOfAlcohol: 2,  age: 19}, 
     ];
 
@@ -43,7 +43,6 @@ function INIT(array){
 }
 INIT(shopCustomers);
 
-
 function INIT1(array){
   let i=0;
   let sum=0;
@@ -67,10 +66,14 @@ function INIT1(array){
             if( ( (sum - difference[key]) >0) && ( (sum - difference[key]) < MinDifference) ){
               MinDifference = sum - difference[key];
               spirit = key;
+            } 
             }
-            }
+            if(MinDifference == sum) {
             console.log(group);
-            console.log(spirit);
+            console.log("You don't have enaugh money, you need some extra");
+            } else{
+            console.log(group);
+            console.log(spirit);}
             i=0;
             sum=0;
             group ='';
@@ -80,7 +83,6 @@ function INIT1(array){
     AmountOfGroupManey(cashBalance);
       }
     return(Customer1(element));
- 
 })
 }
 INIT1(NotEnoughMoney);
